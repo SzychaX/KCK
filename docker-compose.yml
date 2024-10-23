@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: CarCatalog
+    ports:
+      - 5434:5432
+    environment:
+      POSTGRES_USER: kuba
+      POSTGRES_PASSWORD: kuba
+      POSTGRES_DB: CarCatalog
