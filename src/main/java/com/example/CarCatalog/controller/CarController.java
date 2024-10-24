@@ -22,12 +22,14 @@ public class CarController {
         while(true) {
             carView.showMenu(); // Zmieniono na wywołanie widoku menu
             int choice = scanner.nextInt();
+            scanner.nextLine();
             switch (choice) {
                 case 1 -> listCars();
                 case 2 -> addCar(scanner);
                 case 3 -> deleteCar(scanner);
                 case 4 -> listCar(scanner);
-                case 5 -> System.exit(0);
+                case 5 -> displayByBrand(scanner);
+                case 6 -> System.exit(0);
                 default -> carView.displayInvalidOption(); // Przeniesienie komunikatu o nieprawidłowej opcji do widoku
             }
         }
@@ -59,4 +61,9 @@ public class CarController {
             carView.displayCarNotFound(id); // Komunikat o nieznalezieniu auta
         }
     }
+    public void displayByBrand(Scanner scanner) {
+        carView.displayPromptForBrandSearch();
+        carView.listCars(carService.getCarsByBrand(scanner.nextLine()));
+    }
+
 }

@@ -27,4 +27,9 @@ public class CarService {
     public Car getCarById(Long id) {
         return carRepository.findById(id).orElse(null);
     }
+
+    public List<Car> getCarsByBrand(String brand) {
+        brand = brand.replaceAll("\\s+", " ").trim();
+        return carRepository.findByBrandIgnoreCase(brand);
+    }
 }

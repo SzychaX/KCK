@@ -23,7 +23,9 @@ public class CarView {
         System.out.println("------------------------------------------------");
         System.out.println("  4. 🔍  Wypisz auto o podanym ID                ");
         System.out.println("------------------------------------------------");
-        System.out.println("  5. 🚪  Wyjdź z programu                        ");
+        System.out.println("  5. 🔍  Wypisz auta danej marki                  ");
+        System.out.println("------------------------------------------------");
+        System.out.println("  6. 🚪  Wyjdź z programu                        ");
         System.out.println("------------------------------------------------");
         System.out.println("===============================================");
         System.out.print("   Wybór: ");
@@ -89,7 +91,11 @@ public class CarView {
     }
 
     public void displayInvalidOption() {
-        System.out.println("Wprowadzono nieprawidłowy numer.");
+        System.out.println("Wprowadzono nieprawidłowe dane.");
+    }
+
+    public void displayPromptForBrandSearch(){
+        System.out.println("Podaj marke auta, ktore chcesz wyszukac.");
     }
 
     public void displayCarBrand(String brand) {
