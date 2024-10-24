@@ -15,6 +15,7 @@ public class Car {
     private String model;
     private int year;
     private int power;
+    private double mileage;
     private String color;
     private double price;
 }
