@@ -29,7 +29,8 @@ public class CarController {
                 case 3 -> deleteCar(scanner);
                 case 4 -> listCar(scanner);
                 case 5 -> displayByBrand(scanner);
-                case 6 -> System.exit(0);
+                case 6 -> displayByVersion(scanner);
+                case 7 -> System.exit(0);
                 default -> carView.displayInvalidOption(); // Przeniesienie komunikatu o nieprawidłowej opcji do widoku
             }
         }
@@ -64,6 +65,11 @@ public class CarController {
     public void displayByBrand(Scanner scanner) {
         carView.displayPromptForBrandSearch();
         carView.listCars(carService.getCarsByBrand(scanner.nextLine()));
+    }
+
+    public void displayByVersion(Scanner scanner) {
+        carView.displayPromptForVersionSearch();
+        carView.listCars(carService.getCarsByVersion(scanner.nextLine()));
     }
 
 }

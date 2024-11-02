@@ -12,4 +12,7 @@ import java.util.List;
 public interface CarRepository extends JpaRepository<Car, Long> {
     @Query("select c from Car c where c.brand like %:brand%")
     List<Car> findByBrandIgnoreCase(@Param("brand") String brand);
+
+    @Query("select v from Car v where v.version like %:version%")
+    List<Car> findByVersion(@Param("version") String version);
 }

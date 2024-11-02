@@ -32,4 +32,8 @@ public class CarService {
         brand = brand.replaceAll("\\s+", " ").trim();
         return carRepository.findByBrandIgnoreCase(brand);
     }
+
+    public List<Car> getCarsByVersion(String version) {
+        return carRepository.findByVersion(version);
+    }
 }

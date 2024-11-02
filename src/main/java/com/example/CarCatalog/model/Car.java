@@ -13,6 +13,7 @@ public class Car {
     private Long id;
     private String brand;
     private String model;
+    private String version;
     private int year;
     private int power;
     private double mileage;

@@ -25,7 +25,9 @@ public class CarView {
         System.out.println("------------------------------------------------");
         System.out.println("  5. 🔍  Wypisz auta danej marki                  ");
         System.out.println("------------------------------------------------");
-        System.out.println("  6. 🚪  Wyjdź z programu                        ");
+        System.out.println("  6. 🔍  Wypisz auta o podanej wersji nadwozia                  ");
+        System.out.println("------------------------------------------------");
+        System.out.println("  7. 🚪  Wyjdź z programu                        ");
         System.out.println("------------------------------------------------");
         System.out.println("===============================================");
         System.out.print("   Wybór: ");
@@ -34,7 +36,7 @@ public class CarView {
 
     public void displayCarDetails(Car car) {
         System.out.println("========================================================================================");
-        System.out.println("Marka: " + car.getBrand() + " Model: " + car.getModel() + "\nRocznik: " + car.getYear() + "\nPrzebieg: " + car.getMileage() +
+        System.out.println("Marka: " + car.getBrand() + " Model: " + car.getModel() + "\nWersja: " + car.getVersion() + "\nRocznik: " + car.getYear() + "\nPrzebieg: " + car.getMileage() +
                 "\nKolor: " + car.getColor() + "\nMoc: " + car.getPower() + "kM" + "\nCena: " + car.getPrice() + "Zl" + "\nId pojazdu: " + car.getId());
         System.out.println("========================================================================================");
     }
@@ -50,6 +52,8 @@ public class CarView {
         String brand = scanner.next();
         System.out.println("Wprowadz model: ");
         String model = scanner.next();
+        System.out.println("Wprowadz Wersje nadwozia: ");
+        String version = scanner.next();
         System.out.println("Wprowadz rocznik: ");
         int year = scanner.nextInt();
         System.out.println("Wprowadz przebieg: ");
@@ -64,6 +68,7 @@ public class CarView {
         Car car = new Car();
         car.setBrand(brand);
         car.setModel(model);
+        car.setVersion(version);
         car.setYear(year);
         car.setMileage(mileage);
         car.setPower(power);
@@ -96,6 +101,10 @@ public class CarView {
 
     public void displayPromptForBrandSearch(){
         System.out.println("Podaj marke auta, ktore chcesz wyszukac.");
+    }
+
+    public void displayPromptForVersionSearch(){
+        System.out.println("Podaj wersje nadwozia, ktora chcesz wyszukac.");
     }
 
     public void displayCarBrand(String brand) {
