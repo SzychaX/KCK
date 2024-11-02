@@ -1,5 +1,6 @@
 package com.example.CarCatalog.controller;
 
+import ch.qos.logback.core.model.Model;
 import com.example.CarCatalog.model.Car;
 import com.example.CarCatalog.service.CarService;
 import com.example.CarCatalog.view.CarView;
@@ -71,5 +72,6 @@ public class CarController {
         carView.displayPromptForVersionSearch();
         carView.listCars(carService.getCarsByVersion(scanner.nextLine()));
     }
+
 
 }

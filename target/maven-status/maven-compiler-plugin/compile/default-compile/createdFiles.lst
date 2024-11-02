@@ -2,4 +2,5 @@ com\example\CarCatalog\controller\CarController.class
 com\example\CarCatalog\repository\CarRepository.class
 com\example\CarCatalog\CarCatalogApplication.class
 com\example\CarCatalog\service\CarService.class
+com\example\CarCatalog\view\CarView.class
 com\example\CarCatalog\model\Car.class
