@@ -9,36 +9,45 @@ import java.util.Scanner;
 @Component
 public class CarView {
 
+    public static final String RESET = "\u001B[0m";
+    public static final String RED = "\u001B[31m";
+    public static final String GREEN = "\u001B[32m";
+    public static final String YELLOW = "\u001B[33m";
+    public static final String BLUE = "\u001B[34m";
+    public static final String PURPLE = "\u001B[35m";
+    public static final String CYAN = "\u001B[36m";
+    public static final String WHITE = "\u001B[37m";
+
     public void showMenu() {
-        System.out.println("===============================================");
-        System.out.println("                🚗 KATALOG AUT 🚗              ");
-        System.out.println("===============================================\n");
-        System.out.println("               Wybierz opcję z menu:            ");
-        System.out.println("------------------------------------------------");
-        System.out.println("  1. 📜  Wypisz wszystkie auta                   ");
-        System.out.println("------------------------------------------------");
-        System.out.println("  2. ➕  Dodaj nowe auto                          ");
-        System.out.println("------------------------------------------------");
-        System.out.println("  3. ❌  Usuń auto z listy                       ");
-        System.out.println("------------------------------------------------");
-        System.out.println("  4. 🔍  Wypisz auto o podanym ID                ");
-        System.out.println("------------------------------------------------");
-        System.out.println("  5. 🔍  Wypisz auta danej marki                  ");
-        System.out.println("------------------------------------------------");
-        System.out.println("  6. 🔍  Wypisz auta o podanej wersji nadwozia                  ");
-        System.out.println("------------------------------------------------");
-        System.out.println("  7. 🚪  Wyjdź z programu                        ");
-        System.out.println("------------------------------------------------");
-        System.out.println("===============================================");
-        System.out.print("   Wybór: ");
+        System.out.println(CYAN + "===============================================");
+        System.out.println(RED + "                🚗 KATALOG AUT 🚗              ");
+        System.out.println(CYAN + "===============================================\n");
+        System.out.println(RED + "               Wybierz opcję z menu:            ");
+        System.out.println(CYAN + "------------------------------------------------");
+        System.out.println(YELLOW + "  1. 📜  Wypisz wszystkie auta                   ");
+        System.out.println(CYAN + "------------------------------------------------");
+        System.out.println(GREEN + "  2. ➕  Dodaj nowe auto                          ");
+        System.out.println(CYAN + "------------------------------------------------");
+        System.out.println(RED + "  3. ❌  Usuń auto z listy                       ");
+        System.out.println(CYAN + "------------------------------------------------");
+        System.out.println(BLUE + "  4. 🔍  Wypisz auto o podanym ID                ");
+        System.out.println(CYAN + "------------------------------------------------");
+        System.out.println(BLUE + "  5. 🔍  Wypisz auta danej marki                  ");
+        System.out.println(CYAN + "------------------------------------------------");
+        System.out.println(BLUE + "  6. 🔍  Wypisz auta o podanej wersji nadwozia                  ");
+        System.out.println(CYAN + "------------------------------------------------");
+        System.out.println(WHITE + "  7. 🚪  Wyjdź z programu                        ");
+        System.out.println(CYAN + "------------------------------------------------");
+        System.out.println(CYAN + "===============================================");
+        System.out.print(PURPLE + "   Wybór: " + RESET);
     }
 
 
     public void displayCarDetails(Car car) {
-        System.out.println("========================================================================================");
-        System.out.println("Marka: " + car.getBrand() + " Model: " + car.getModel() + "\nWersja: " + car.getVersion() + "\nRocznik: " + car.getYear() + "\nPrzebieg: " + car.getMileage() +
-                "\nKolor: " + car.getColor() + "\nMoc: " + car.getPower() + "kM" + "\nCena: " + car.getPrice() + "Zl" + "\nId pojazdu: " + car.getId());
-        System.out.println("========================================================================================");
+        System.out.println(CYAN + "========================================================================================");
+        System.out.println(BLUE + "Marka: "+ YELLOW + car.getBrand() + BLUE + " Model: " + YELLOW + car.getModel() + BLUE +"\nWersja: "+ YELLOW + car.getVersion() + BLUE + "\nRocznik: " + YELLOW + car.getYear() + BLUE +"\nPrzebieg: " + YELLOW + car.getMileage() +
+        BLUE + "\nKolor: " + YELLOW + car.getColor() + BLUE +"\nMoc: " + YELLOW + car.getPower() + "kM" + BLUE + "\nCena: " + YELLOW + car.getPrice() + "Zl" + BLUE + "\nId pojazdu: " + RED + car.getId() + RESET);
+        System.out.println(CYAN + "========================================================================================" + RESET);
     }
 
     public void listCars(List<Car> cars) {
@@ -48,7 +57,7 @@ public class CarView {
     }
 
     public Car addCar(Scanner scanner) {
-        System.out.println("Wprowadz marke: ");
+        System.out.println(PURPLE + "Wprowadz marke: ");
         String brand = scanner.next();
         System.out.println("Wprowadz model: ");
         String model = scanner.next();
@@ -62,7 +71,7 @@ public class CarView {
         int power = scanner.nextInt();
         System.out.println("Wprowadz kolor: ");
         String color = scanner.next();
-        System.out.println("Wprowadz cene: ");
+        System.out.println("Wprowadz cene: " + RESET);
         double price = scanner.nextDouble();
 
         Car car = new Car();
@@ -79,32 +88,32 @@ public class CarView {
     }
 
     public void displayCarAdded() {
-        System.out.println("Auto dodane!");
+        System.out.println(GREEN + "Auto dodane!" + RESET);
     }
 
     public long promptForCarId(Scanner scanner) {
-        System.out.println("Podaj id auta: ");
+        System.out.println(PURPLE + "Podaj id auta: " + RESET);
         return scanner.nextLong();
     }
 
     public void displayCarRemoved(long id) {
-        System.out.println("Auto o id " + id + " zostało usunięte.");
+        System.out.println(GREEN + "Auto o id " + YELLOW + id + GREEN + " zostało " + RED + "usunięte" + GREEN + "." + RESET);
     }
 
     public void displayCarNotFound(long id) {
-        System.out.println("Auto o id " + id + " nie zostało znalezione.");
+        System.out.println(RED + "Auto o id " + YELLOW + id + RED + " nie zostało znalezione." + RESET);
     }
 
     public void displayInvalidOption() {
-        System.out.println("Wprowadzono nieprawidłowe dane.");
+        System.out.println(RED + "Wprowadzono nieprawidłowe dane." + RESET);
     }
 
     public void displayPromptForBrandSearch(){
-        System.out.println("Podaj marke auta, ktore chcesz wyszukac.");
+        System.out.println(PURPLE + "Podaj marke auta, ktore chcesz wyszukac." + RESET);
     }
 
     public void displayPromptForVersionSearch(){
-        System.out.println("Podaj wersje nadwozia, ktora chcesz wyszukac.");
+        System.out.println(PURPLE + "Podaj wersje nadwozia, ktora chcesz wyszukac." + RESET);
     }
 
     public void displayCarBrand(String brand) {
