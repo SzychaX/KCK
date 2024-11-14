@@ -10,9 +10,9 @@ import java.util.List;
 
 @Repository
 public interface CarRepository extends JpaRepository<Car, Long> {
-    @Query("select c from Car c where c.brand like %:brand%")
+    @Query("select c from Car c where c.brand ilike %:brand%")
     List<Car> findByBrandIgnoreCase(@Param("brand") String brand);
 
-    @Query("select v from Car v where v.version like %:version%")
+    @Query("select v from Car v where v.version ilike %:version%")
     List<Car> findByVersion(@Param("version") String version);
 }

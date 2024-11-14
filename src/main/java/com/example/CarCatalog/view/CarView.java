@@ -58,7 +58,7 @@ public class CarView {
 
     public Car addCar(Scanner scanner) {
         System.out.println(PURPLE + "Wprowadz marke: ");
-        String brand = scanner.next();
+        String brand = scanner.nextLine();
         System.out.println("Wprowadz model: ");
         String model = scanner.next();
         System.out.println("Wprowadz Wersje nadwozia: ");
